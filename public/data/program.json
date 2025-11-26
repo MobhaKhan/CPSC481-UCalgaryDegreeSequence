@@ -1,0 +1,455 @@
+{
+  "studentProfile": {
+    "name": "Mariam K.",
+    "program": "Bachelor of Science · Computer Science",
+    "year": 4,
+    "creditsLeft": 21
+  },
+  "courseCatalog": {
+    "CPSC 231": { "prerequisites": [], "antirequisites": ["CPSC 217"] },
+    "CPSC 233": { "prerequisites": ["CPSC 231"], "antirequisites": [] },
+    "CPSC 251": { "prerequisites": ["CPSC 233"], "antirequisites": [] },
+    "MATH 211": { "prerequisites": ["High school calculus"], "antirequisites": [] },
+    "MATH 249/265": { "prerequisites": ["MATH 211"], "antirequisites": [] },
+    "PHIL 279": { "prerequisites": [], "antirequisites": [] },
+    "CPSC 331": { "prerequisites": ["CPSC 251"], "antirequisites": [] },
+    "CPSC 351": { "prerequisites": ["CPSC 331"], "antirequisites": [] },
+    "CPSC 355": { "prerequisites": ["CPSC 331"], "antirequisites": [] },
+    "SENG 300": { "prerequisites": ["CPSC 251"], "antirequisites": [] },
+    "PHIL 314": { "prerequisites": [], "antirequisites": [] },
+    "CPSC 413": { "prerequisites": ["CPSC 355", "CPSC 351"], "antirequisites": [] },
+    "CPSC 449": { "prerequisites": ["CPSC 355"], "antirequisites": [] },
+    "ALMC 317": { "prerequisites": [], "antirequisites": [] },
+    "ERTH 305": { "prerequisites": [], "antirequisites": [] },
+    "CPSC 457": {
+      "prerequisites": ["CPSC 355 (C+ or higher)", "CPSC 449"],
+      "antirequisites": []
+    },
+    "CPSC 481": {
+      "prerequisites": ["CPSC 351 or CPSC 355"],
+      "antirequisites": []
+    },
+    "CPSC 383": { "prerequisites": ["CPSC 251", "MATH 249"], "antirequisites": [] },
+    "ASPH 305": { "prerequisites": [], "antirequisites": [] },
+    "AFST 303": { "prerequisites": [], "antirequisites": [] },
+    "CPSC 441": {
+      "prerequisites": ["CPSC 355 (C+ required)", "CPSC 413 recommended"],
+      "antirequisites": []
+    },
+    "CPSC 409": { "prerequisites": ["CPSC 331"], "antirequisites": [] },
+    "CPSC 589": {
+      "prerequisites": ["CPSC 453 with C+ or higher", "CPSC 413"],
+      "antirequisites": []
+    },
+    "ERTH 309": { "prerequisites": ["ERTH 305"], "antirequisites": [] },
+    "SOCI 345": { "prerequisites": [], "antirequisites": [] },
+    "CPSC 526": {
+      "prerequisites": ["CPSC 441 (C+ required)", "CPSC 413"],
+      "antirequisites": ["CPSC 531"]
+    },
+    "CPSC Elective": { "prerequisites": ["CPSC 251"], "antirequisites": [] },
+    "CPSC 501": { "prerequisites": ["CPSC 449", "CPSC 413"], "antirequisites": [] },
+    "CPSC 405": { "prerequisites": ["CPSC 251"], "antirequisites": [] },
+    "CPSC 433": { "prerequisites": ["CPSC 413"], "antirequisites": [] },
+    "ART 241": { "prerequisites": [], "antirequisites": [] },
+    "ITAL 201": { "prerequisites": [], "antirequisites": [] },
+    "Field course": { "prerequisites": ["CPSC 331"], "antirequisites": [] }
+  },
+  "degreeTimeline": [
+    {
+      "id": "year-1",
+      "yearLabel": "1st Year Program Courses",
+      "status": "Complete",
+      "terms": [
+        {
+          "title": "Fall",
+          "courses": [
+            {
+              "code": "CPSC 231",
+              "description": "Intro to programming and data structures",
+              "status": "complete"
+            },
+            {
+              "code": "CPSC 233",
+              "description": "Computer systems and programming",
+              "status": "complete"
+            },
+            {
+              "code": "MATH 211",
+              "description": "Calculus I",
+              "status": "complete"
+            },
+            {
+              "code": "PHIL 279",
+              "description": "Reason and persuasion",
+              "status": "complete"
+            },
+            {
+              "code": "Non-Science Option (Breadth)",
+              "description": "",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "title": "Winter",
+          "courses": [
+            {
+              "code": "CPSC 251",
+              "description": "Systems programming",
+              "status": "complete"
+            },
+            {
+              "code": "MATH 249/265",
+              "description": "Mathematics for computing",
+              "status": "complete"
+            },
+            {
+              "code": "Non-Science Option (Breadth)",
+              "description": "",
+              "status": "complete"
+            },
+            {
+              "code": "Non-Major Field Option",
+              "description": "",
+              "status": "complete"
+            },
+            {
+              "code": "Non-Major Field Option",
+              "description": "",
+              "status": "complete"
+            }
+          ],
+          "note": "Students who pass CPSC 217 & 219 shift CPSC 251 to second year."
+        }
+      ],
+      "notes": [
+        "For students who completed CPSC 217 and 219, CPSC 251 moves to second year."
+      ]
+    },
+    {
+      "id": "year-2",
+      "yearLabel": "2nd Year Program Courses",
+      "status": "Complete",
+      "terms": [
+        {
+          "title": "Fall",
+          "courses": [
+            {
+              "code": "CPSC 331",
+              "description": "Software engineering foundations",
+              "status": "complete"
+            },
+            {
+              "code": "CPSC 351",
+              "description": "Software engineering II",
+              "status": "complete"
+            },
+            {
+              "code": "CPSC 355",
+              "description": "Computing machinery I",
+              "status": "complete"
+            },
+            {
+              "code": "SENG 300",
+              "description": "Software engineering principles",
+              "status": "complete"
+            },
+            {
+              "code": "PHIL 314",
+              "description": "Ethics and computing",
+              "status": "complete"
+            },
+            {
+              "code": "Field course",
+              "description": "Computer Science (300 level or higher)",
+              "status": "complete"
+            }
+          ],
+          "note": "Field-of-CPSC course lists live in the Academic Calendar."
+        },
+        {
+          "title": "Winter",
+          "courses": [
+            {
+              "code": "Non-Science Option",
+              "description": "Breadth requirement",
+              "status": "complete"
+            },
+            {
+              "code": "Non-Major Field Option",
+              "description": "",
+              "status": "complete"
+            },
+            {
+              "code": "Non-Major Field Option",
+              "description": "",
+              "status": "complete"
+            },
+            {
+              "code": "Non-Science Option",
+              "description": "Breadth requirement",
+              "status": "complete"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Field-of-CPSC course lists live in the Academic Calendar."
+      ]
+    },
+    {
+      "id": "year-3",
+      "yearLabel": "3rd Year Program Courses",
+      "status": "Issue Found",
+      "terms": [
+        {
+          "title": "Fall",
+          "courses": [
+            {
+              "code": "CPSC 413",
+              "description": "Design & Analysis of Algorithms I",
+              "status": "complete"
+            },
+            {
+              "code": "CPSC 355",
+              "description": "Computing Machinery I",
+              "status": "complete"
+            },
+            {
+              "code": "CPSC 449",
+              "description": "Programming Paradigms",
+              "status": "complete"
+            },
+            {
+              "code": "ALMC 317",
+              "description": "Muslim Civilization I",
+              "status": "complete"
+            },
+            {
+              "code": "ERTH 305",
+              "description": "Introduction to Dinosaurs",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "title": "Winter",
+          "courses": [
+            {
+              "code": "CPSC 457",
+              "description": "Principles of Operating Systems (C+ required)",
+              "status": "issue",
+              "note": "Grade below C+ in CPSC 355; retake required."
+            },
+            {
+              "code": "CPSC 481",
+              "description": "Human-Computer Interaction I",
+              "status": "complete"
+            },
+            {
+              "code": "CPSC 383",
+              "description": "Explorations in Artificial Intelligence & Machine Learning",
+              "status": "complete"
+            },
+            {
+              "code": "ASPH 305",
+              "description": "Introduction to Astrophysics",
+              "status": "complete"
+            },
+            {
+              "code": "AFST 303",
+              "description": "Critical Contemporary Issues in Africa",
+              "status": "complete"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "year-4",
+      "yearLabel": "4th Year Program Courses",
+      "status": "Incomplete",
+      "terms": [
+        {
+          "title": "Fall",
+          "courses": [
+            {
+              "code": "CPSC 441",
+              "description": "Computer Networks",
+              "status": "complete"
+            },
+            {
+              "code": "CPSC 409",
+              "description": "History of Computation",
+              "status": "complete"
+            },
+            {
+              "code": "CPSC 589",
+              "description": "Modelling for Computer Graphics",
+              "status": "issue",
+              "note": "Prerequisite CPSC 453 with C+ or higher not yet met."
+            },
+            {
+              "code": "ERTH 309",
+              "description": "Field Studies of Earth",
+              "status": "complete"
+            },
+            {
+              "code": "SOCI 345",
+              "description": "Media and Society",
+              "status": "complete"
+            }
+          ]
+        },
+        {
+          "title": "Winter",
+          "courses": [
+            {
+              "code": "CPSC 526",
+              "description": "Network Systems Security (C+ required)",
+              "status": "issue",
+              "note": "CPSC 441 requires C+ to proceed."
+            },
+            {
+              "code": "CPSC Elective",
+              "description": "500 level or higher CPSC elective",
+              "status": "pending"
+            },
+            {
+              "code": "CPSC Elective",
+              "description": "500 level or higher CPSC elective",
+              "status": "pending"
+            },
+            {
+              "code": "CPSC Elective",
+              "description": "500 level or higher CPSC elective",
+              "status": "pending"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Field courses at the 400/500 level count in both fall and winter terms."
+      ]
+    }
+  ],
+  "plannerTemplates": [
+    {
+      "id": "plan-4th",
+      "name": "4 course load (Academic Year 4)",
+      "year": "4th Year",
+      "terms": {
+        "fall": [
+          "SOCI 345 - Media and Society",
+          "CPSC 589 - Modelling for Computer Graphics",
+          "CPSC 501 - Advanced Programming Techniques",
+          "CPSC 441 - Computer Networks"
+        ],
+        "winter": [
+          "CPSC 526 - Network Systems Security",
+          "CPSC 405 - Software Entrepreneurship",
+          "CPSC 433 - Artificial Intelligence",
+          "ART 241 - Introduction to Drawing"
+        ],
+        "spring": [
+          "ITAL 201 - Beginners' Italian I"
+        ],
+        "summer": [
+          "ERTH 309 - Field Studies of Earth"
+        ]
+      },
+      "remainingCourses": [
+        "CPSC 589",
+        "CPSC 526",
+        "CPSC Elective (500 level)",
+        "CPSC Elective (500 level)"
+      ],
+      "incompletePrereqs": [
+        "CPSC 457"
+      ]
+    },
+    {
+      "id": "plan-3rd",
+      "name": "3rd Year (Academic Year 3)",
+      "year": "3rd Year",
+      "terms": {
+        "fall": [
+          "CPSC 413 - Design and Analysis of Algorithms I",
+          "CPSC 355 - Computing Machinery I",
+          "CPSC 449 - Programming Paradigms",
+          "ALMC 317 - Muslim Civilization I",
+          "ERTH 305 - Introduction to Dinosaurs"
+        ],
+        "winter": [
+          "CPSC 457 - Principles of Operating Systems",
+          "CPSC 481 - Human-Computer Interaction I",
+          "CPSC 383 - Explorations in Artificial Intelligence and Machine Learning",
+          "ASPH 305 - Introduction to Astrophysics",
+          "AFST 303 - Critical Contemporary Issues in Africa"
+        ],
+        "spring": [],
+        "summer": []
+      },
+      "remainingCourses": [
+        "CPSC 457"
+      ],
+      "incompletePrereqs": [
+        "CPSC 457"
+      ]
+    },
+    {
+      "id": "plan-2nd",
+      "name": "2nd Year (Academic Year 2)",
+      "year": "2nd Year",
+      "terms": {
+        "fall": [
+          "CPSC 331 - Software Engineering I",
+          "CPSC 351 - Software Engineering II",
+          "CPSC 355 - Computing Machinery I",
+          "SENG 300 - Introduction to Software Engineering",
+          "PHIL 314 - Ethics in Technology"
+        ],
+        "winter": [
+          "Course in Field of Computer Science (300+)",
+          "Non-Science Option (Breadth)",
+          "Non-Major Field Option",
+          "Non-Science Option (Breadth)"
+        ],
+        "spring": [],
+        "summer": []
+      },
+      "remainingCourses": [
+        "Course in Field of Computer Science (300+)",
+        "Non-Major Field Option"
+      ],
+      "incompletePrereqs": []
+    },
+    {
+      "id": "plan-1st",
+      "name": "1st Year (Academic Year 1)",
+      "year": "1st Year",
+      "terms": {
+        "fall": [
+          "CPSC 231 - Software Tools",
+          "CPSC 233 - Computer Systems and Programming",
+          "MATH 211 - Calculus I",
+          "PHIL 279 - Reason and Persuasion"
+        ],
+        "winter": [
+          "CPSC 251 - Systems Programming",
+          "MATH 249 - Mathematics for Computing",
+          "Non-Science Option (Breadth)",
+          "Non-Major Field Option"
+        ],
+        "spring": [],
+        "summer": []
+      },
+      "remainingCourses": [
+        "Non-Science Option (Breadth)",
+        "Non-Major Field Option"
+      ],
+      "incompletePrereqs": []
+    }
+  ]
+}
