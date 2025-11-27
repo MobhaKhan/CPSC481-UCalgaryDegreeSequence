@@ -342,13 +342,13 @@
       "terms": {
         "fall": [
           "SOCI 345 - Media and Society",
-          "CPSC 589 - Modelling for Computer Graphics",
-          "CPSC 501 - Advanced Programming Techniques",
+          "CPSC 589 - Computer Graphics",
+          "CPSC 501 - Advanced Programming",
           "CPSC 441 - Computer Networks"
         ],
         "winter": [
-          "CPSC 526 - Network Systems Security",
-          "CPSC 405 - Software Entrepreneurship",
+          "CPSC 526 - Network Security",
+          "CPSC 409 - Computation History",
           "CPSC 433 - Artificial Intelligence",
           "ART 241 - Introduction to Drawing"
         ],
@@ -405,7 +405,7 @@
       "terms": {
         "fall": [
           "CPSC 331 - Software Engineering I",
-          "CPSC 351 - Software Engineering II",
+          "CPSC 351 - Discrete Mathematics",
           "CPSC 355 - Computing Machinery I",
           "SENG 300 - Introduction to Software Engineering",
           "PHIL 314 - Ethics in Technology"
@@ -432,13 +432,13 @@
       "terms": {
         "fall": [
           "CPSC 231 - Software Tools",
-          "CPSC 233 - Computer Systems and Programming",
-          "MATH 211 - Calculus I",
+          "CPSC 233 - Intro Programming",
+          "MATH 211 - Linear Algebra",
           "PHIL 279 - Reason and Persuasion"
         ],
         "winter": [
           "CPSC 251 - Systems Programming",
-          "MATH 249 - Mathematics for Computing",
+          "MATH 249 - Calculus I",
           "Non-Science Option (Breadth)",
           "Non-Major Field Option"
         ],

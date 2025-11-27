@@ -1220,11 +1220,11 @@ body, html {
 }
 .advisor-header {
   position: relative;
-  text-align: center;       /* centers the title */
+  text-align: center;       
   margin-bottom: 20px;
 }
 
-/* Back arrow on top-left */
+
 .back-arrow {
   position: absolute;
   left: 0;
@@ -1239,7 +1239,72 @@ body, html {
   color: #8b0000;
 }
 
-/* Title centered below arrow */
+
 .advisor-title {
-  margin-top: 25px;        /* pushes title down below the arrow */
+  margin-top: 25px;      
+}
+
+.plan-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.06); 
+  z-index: 5;
+}
+
+
+.plan-panel {
+  position: relative;
+  z-index: 6;
+}
+
+
+.plan-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.75rem;
+}
+
+.plan-panel__close {
+  border: none;
+  background: transparent;
+  font-size: 35px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  color: #555;
+}
+
+.plan-panel__close:hover {
+  color: #000;
+}
+
+.plan-panel__course-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.plan-panel__course-chip {
+  background: #fff7c2;             
+  border-radius: 999px;             
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #f0d97c;
+}
+.plan-panel__course-chip {
+  background: #fff5dc;      
+  border: 1px solid #f1d9a5;
+  color: #b88a2c;         
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
 }
