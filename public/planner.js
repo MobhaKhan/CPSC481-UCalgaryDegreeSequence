@@ -146,7 +146,7 @@ const render = () => {
       <div class="planner-page">
         <header class="planner-header">
           <div class="planner-header__title">
-            <a class="back-link" href="index.html">‹</a>
+            <a class="back-link" href="index.html">←</a>
             <div>
               <p class="eyebrow">Degree Planner</p>
               <h1>${escapeHtml(state.studentProfile.name)}</h1>

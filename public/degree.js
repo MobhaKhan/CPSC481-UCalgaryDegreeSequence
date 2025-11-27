@@ -224,7 +224,7 @@ const render = () => {
       <div class="degree-panel ${hasPanel ? '' : 'degree-panel--full'}">
         <header class="degree-header">
           <div class="degree-header__left">
-            <a href="planner.html" class="back-link">‹</a>
+            <a href="advisor.html" class="back-link">←</a>
             <div>
               <p class="eyebrow">Degree Requirements</p>
               <h1>${escapeHtml(state.studentProfile.name)}</h1>

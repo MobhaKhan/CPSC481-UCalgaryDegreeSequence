@@ -1181,7 +1181,6 @@ body, html {
   gap: 24px;
 }
 
-
 .degree-shell--with-panel .degree-panel {
   flex: 2 1 0;
 }
@@ -1218,4 +1217,29 @@ body, html {
     transform: translateX(0);
     opacity: 1;
   }
+}
+.advisor-header {
+  position: relative;
+  text-align: center;       /* centers the title */
+  margin-bottom: 20px;
+}
+
+/* Back arrow on top-left */
+.back-arrow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 26px;
+  color: #b71c1c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-arrow:hover {
+  color: #8b0000;
+}
+
+/* Title centered below arrow */
+.advisor-title {
+  margin-top: 25px;        /* pushes title down below the arrow */
 }
