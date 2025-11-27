@@ -1167,3 +1167,55 @@ body, html {
 #advisor-root {
   background: #ffffff !important;
 }
+
+.app-shell.degree-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 32px 40px;
+}
+
+
+.degree-shell--with-panel {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+
+.degree-shell--with-panel .degree-panel {
+  flex: 2 1 0;
+}
+
+.degree-shell--with-panel .plan-panel {
+  flex: 1 0 340px;
+  margin-top: 0;           
+}
+@media (max-width: 900px) {
+  .degree-shell--with-panel {
+    flex-direction: column;
+  }
+
+  .degree-shell--with-panel .plan-panel {
+    width: 100%;
+  }
+}
+
+.plan-panel {
+  position: relative;
+}
+
+.plan-panel--slide-in {
+  animation: planPanelSlideIn 0.28s ease-out forwards;
+  transform-origin: center right;
+}
+
+@keyframes planPanelSlideIn {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
