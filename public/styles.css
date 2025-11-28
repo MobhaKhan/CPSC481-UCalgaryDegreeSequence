@@ -1541,3 +1541,7 @@ body {
 .delete-confirm:hover {
   background: #990000 !important;
 }
+.plan-list-card__header h4 {
+  margin-bottom: 2px;
+}
+
