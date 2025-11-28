@@ -1,3 +1,6 @@
+
+
+
 const root = document.getElementById('planner-root')
 
 const state = {
@@ -14,7 +17,11 @@ const state = {
   isModalOpen: false,       // new plan modal
   newPlanName: '',
   newPlanYear: '4th Year',
-  isSaveModalOpen: false    // ✅ save-success popup
+  isSaveModalOpen: false,   // save-success popup
+
+
+  isDeleteModalOpen: false,
+  deletePlanId: null
 }
 
 const termLabels = {
@@ -104,13 +111,23 @@ const render = () => {
   const planListHtml = state.plans
     .map(
       (plan) => `
-        <button
-          type="button"
-          class="plan-list__item ${plan.id === activePlan.id ? 'is-active' : ''}"
-          data-plan-id="${escapeHtml(plan.id)}"
-        >
-          ${escapeHtml(plan.name)}
-        </button>`
+        <div class="plan-list__row">
+          <button
+            type="button"
+            class="plan-list__item ${plan.id === activePlan.id ? 'is-active' : ''}"
+            data-plan-id="${escapeHtml(plan.id)}"
+          >
+            ${escapeHtml(plan.name)}
+          </button>
+          <button
+            type="button"
+            class="plan-delete"
+            data-plan-id="${escapeHtml(plan.id)}"
+            aria-label="Delete plan"
+          >
+            🗑
+          </button>
+        </div>`
     )
     .join('')
 
@@ -175,17 +192,30 @@ const render = () => {
       </div>`
     : ''
 
-const saveModalHtml = state.isSaveModalOpen
-  ? `
-    <div class="save-success-backdrop">
-      <div class="save-success-card">
-        <h3>Plan Saved</h3>
-        <p>Your degree plan has been saved successfully.</p>
-        <button type="button" class="save-success-button save-modal-close">OK</button>
-      </div>
-    </div>`
-  : ''
+  const saveModalHtml = state.isSaveModalOpen
+    ? `
+      <div class="save-success-backdrop">
+        <div class="save-success-card">
+          <h3>Plan Saved</h3>
+          <p>Your degree plan has been saved successfully.</p>
+          <button type="button" class="save-success-button save-modal-close">OK</button>
+        </div>
+      </div>`
+    : ''
 
+  const deleteModalHtml = state.isDeleteModalOpen
+    ? `
+      <div class="modal-backdrop delete-modal-backdrop">
+        <div class="modal-card">
+          <h3>Delete Plan</h3>
+          <p>Are you sure you want to delete this plan?</p>
+          <div class="modal-actions">
+            <button type="button" class="danger-button delete-confirm">Yes, delete</button>
+            <button type="button" class="ghost-button delete-cancel">Cancel</button>
+          </div>
+        </div>
+      </div>`
+    : ''
 
   root.innerHTML = `
     <div class="app-shell planner-shell">
@@ -237,6 +267,7 @@ const saveModalHtml = state.isSaveModalOpen
     </div>
     ${modalHtml}
     ${saveModalHtml}
+    ${deleteModalHtml}
   `
 
   attachEvents()
@@ -269,6 +300,17 @@ const attachEvents = () => {
   document.querySelectorAll('.plan-list__item').forEach((item) => {
     item.addEventListener('click', () => {
       state.activePlanId = item.dataset.planId
+      render()
+    })
+  })
+
+  // 🔴 delete icon on each plan
+  document.querySelectorAll('.plan-delete').forEach((button) => {
+    button.addEventListener('click', () => {
+      const planId = button.dataset.planId
+      if (!planId) return
+      state.deletePlanId = planId
+      state.isDeleteModalOpen = true
       render()
     })
   })
@@ -314,9 +356,19 @@ const attachEvents = () => {
     if (form) {
       form.addEventListener('submit', handleCreatePlan)
     }
+
+    const backdrop = document.querySelector('.modal-backdrop')
+    if (backdrop) {
+      backdrop.addEventListener('click', (event) => {
+        if (event.target === backdrop) {
+          state.isModalOpen = false
+          render()
+        }
+      })
+    }
   }
 
-  // ✅ Save success modal events
+  // Save success modal events
   if (state.isSaveModalOpen) {
     const saveModalClose = document.querySelector('.save-modal-close')
     if (saveModalClose) {
@@ -326,11 +378,40 @@ const attachEvents = () => {
       })
     }
 
-    const backdrop = document.querySelector('.modal-backdrop')
+    const backdrop = document.querySelector('.save-success-backdrop')
     if (backdrop) {
       backdrop.addEventListener('click', (event) => {
         if (event.target === backdrop) {
           state.isSaveModalOpen = false
+          render()
+        }
+      })
+    }
+  }
+
+  // 🔴 Delete plan modal events
+  if (state.isDeleteModalOpen) {
+    const confirmButton = document.querySelector('.delete-confirm')
+    const cancelButton = document.querySelector('.delete-cancel')
+    const backdrop = document.querySelector('.delete-modal-backdrop')
+
+    if (confirmButton) {
+      confirmButton.addEventListener('click', handleDeletePlan)
+    }
+
+    if (cancelButton) {
+      cancelButton.addEventListener('click', () => {
+        state.isDeleteModalOpen = false
+        state.deletePlanId = null
+        render()
+      })
+    }
+
+    if (backdrop) {
+      backdrop.addEventListener('click', (event) => {
+        if (event.target === backdrop) {
+          state.isDeleteModalOpen = false
+          state.deletePlanId = null
           render()
         }
       })
@@ -348,7 +429,6 @@ const attachEvents = () => {
 
       if (event.dataTransfer) {
         event.dataTransfer.effectAllowed = 'move'
-        // For some browsers (like Firefox), you must set data
         event.dataTransfer.setData('text/plain', `${term}:${index}`)
       }
     })
@@ -467,6 +547,42 @@ const handleRemoveCourse = (term, index) => {
       }
     }
   })
+  render()
+}
+
+// 🔴 Delete plan handler
+const handleDeletePlan = () => {
+  const idToDelete = state.deletePlanId
+  if (!idToDelete) {
+    state.isDeleteModalOpen = false
+    render()
+    return
+  }
+
+  state.plans = state.plans.filter((plan) => plan.id !== idToDelete)
+
+  if (!state.plans.length) {
+    state.activePlanId = null
+  } else if (state.activePlanId === idToDelete) {
+    state.activePlanId = state.plans[0].id
+  }
+
+  state.isDeleteModalOpen = false
+  state.deletePlanId = null
+
+  // Optional: also save right away
+  try {
+    const payload = {
+      studentProfile: state.studentProfile,
+      courseCatalog: state.courseCatalog,
+      plans: state.plans,
+      activePlanId: state.activePlanId
+    }
+    localStorage.setItem('degreePlannerState', JSON.stringify(payload))
+  } catch (e) {
+    console.error(e)
+  }
+
   render()
 }
 
