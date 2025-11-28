@@ -1,3 +1,26 @@
+/* Autocomplete dropdown for planner */
+.autocomplete-dropdown {
+  box-shadow: 0 4px 16px rgba(15,27,48,0.10);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  margin-top: 2px;
+  background: #fff;
+  border: 1px solid #c8d1e8;
+  position: absolute;
+  z-index: 1000;
+}
+.autocomplete-option {
+  padding: 8px 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #f2f2f2;
+  transition: background 0.15s;
+}
+.autocomplete-option:last-child {
+  border-bottom: none;
+}
+.autocomplete-option:hover {
+  background: #f8faff;
+}
 :root {
   --ucalgary-red: #bf0c26;
   --ucalgary-gold: #f39200;
