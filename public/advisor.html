@@ -79,7 +79,6 @@
     overlay.className = "error-overlay";
     document.body.appendChild(overlay);
 
-    // Create dialog
     const dialog = document.createElement("div");
     dialog.className = "error-dialog";
     dialog.innerHTML = `
@@ -88,7 +87,7 @@
     `;
     document.body.appendChild(dialog);
 
-    // Close button removes both
+
     document.querySelector(".error-close").addEventListener("click", () => {
       dialog.remove();
       overlay.remove();
