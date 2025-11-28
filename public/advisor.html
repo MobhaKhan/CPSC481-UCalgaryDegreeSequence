@@ -53,16 +53,50 @@
         </button>
       </section>
     </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("advisor-submit");
+    const ucidInput = document.getElementById("advisor-ucid");
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const btn = document.getElementById("advisor-submit");
-        btn.addEventListener("click", () => {
-          window.location.href = "index.html"; 
-     
-        });
-      });
-    </script>
+    btn.addEventListener("click", () => {
+      const ucid = ucidInput.value.trim();
+
+      if (ucid === "30203755") {
+        window.location.href = "index.html";
+      } else {
+        showError("Student not found. Please check your UCID and try again.");
+      }
+    });
+  });
+
+  function showError(message) {
+    // remove existing dialogs
+    document.querySelector(".error-dialog")?.remove();
+    document.querySelector(".error-overlay")?.remove();
+
+    // Create overlay
+    const overlay = document.createElement("div");
+    overlay.className = "error-overlay";
+    document.body.appendChild(overlay);
+
+    // Create dialog
+    const dialog = document.createElement("div");
+    dialog.className = "error-dialog";
+    dialog.innerHTML = `
+      <p>${message}</p>
+      <button class="error-close">OK</button>
+    `;
+    document.body.appendChild(dialog);
+
+    // Close button removes both
+    document.querySelector(".error-close").addEventListener("click", () => {
+      dialog.remove();
+      overlay.remove();
+    });
+  }
+</script>
+
+
 
   </body>
 </html>

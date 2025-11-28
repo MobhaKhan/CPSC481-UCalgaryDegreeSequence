@@ -1308,3 +1308,50 @@ body {
   height: 100%;
   margin: 0;
 }
+
+
+.error-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffe5e5;
+  color: #b30000;
+  padding: 20px 25px;
+  border-radius: 12px;
+  border: 1px solid #ffb2b2;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  z-index: 9999;
+  width: 300px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.error-dialog p {
+  margin: 0 0 15px;
+  font-weight: 500;
+}
+
+.error-close {
+  background: #b30000;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.error-close:hover {
+  background: #990000;
+}
+.error-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35); /* softened dark grey */
+  z-index: 9998;
+  backdrop-filter: blur(2px); /* optional: slight blur for premium feel */
+}
