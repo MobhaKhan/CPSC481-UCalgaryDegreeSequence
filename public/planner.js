@@ -228,7 +228,6 @@ const render = () => {
               <h1>${escapeHtml(state.studentProfile.name)}</h1>
             </div>
           </div>
-          <button type="button" class="ghost-button new-plan-trigger">+ New Plan</button>
         </header>
         <div class="planner-page__content">
           <div class="planner-column">
@@ -238,6 +237,7 @@ const render = () => {
           </div>
           <aside class="planner-sidebar">
             <div class="plan-list-card">
+              <button type="button" class="ghost-button new-plan-trigger">+ New Plan</button>
               <div class="plan-list-card__header">
                 <h4>Plans</h4>
               </div>
