@@ -293,24 +293,13 @@ function showCourseAutocomplete(term, inputElem) {
   if (!value) return
   // Build list from courseCatalog
   const matches = Object.entries(state.courseCatalog)
-    .filter(([code]) => code.toLowerCase().includes(value))
+    .filter(([code, info]) => {
+      const codeMatch = code.toLowerCase().includes(value)
+      const descMatch = info.description && info.description.toLowerCase().includes(value)
+      return codeMatch || descMatch
+    })
     .map(([code, info]) => {
-      // Find description from degreeTimeline
-      let description = '';
-      if (state.degreeTimeline) {
-        for (const year of state.degreeTimeline) {
-          for (const term of year.terms) {
-            for (const course of term.courses) {
-              if (course.code === code) {
-                description = course.description;
-                break;
-              }
-            }
-            if (description) break;
-          }
-          if (description) break;
-        }
-      }
+      const description = info.description || ''
       return description ? `${code} - ${description}` : `${code}`;
     })
 

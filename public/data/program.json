@@ -6,54 +6,59 @@
     "creditsLeft": 21
   },
   "courseCatalog": {
-    "CPSC 231": { "prerequisites": [], "antirequisites": ["CPSC 217"] },
-    "CPSC 233": { "prerequisites": ["CPSC 231"], "antirequisites": [] },
-    "CPSC 251": { "prerequisites": ["CPSC 233"], "antirequisites": [] },
-    "MATH 211": { "prerequisites": ["High school calculus"], "antirequisites": [] },
-    "MATH 249/265": { "prerequisites": ["MATH 211"], "antirequisites": [] },
-    "PHIL 279": { "prerequisites": [], "antirequisites": [] },
-    "CPSC 331": { "prerequisites": ["CPSC 251"], "antirequisites": [] },
-    "CPSC 351": { "prerequisites": ["CPSC 331"], "antirequisites": [] },
-    "CPSC 355": { "prerequisites": ["CPSC 331"], "antirequisites": [] },
-    "SENG 300": { "prerequisites": ["CPSC 251"], "antirequisites": [] },
-    "PHIL 314": { "prerequisites": [], "antirequisites": [] },
-    "CPSC 413": { "prerequisites": ["CPSC 355", "CPSC 351"], "antirequisites": [] },
-    "CPSC 449": { "prerequisites": ["CPSC 355"], "antirequisites": [] },
-    "ALMC 317": { "prerequisites": [], "antirequisites": [] },
-    "ERTH 305": { "prerequisites": [], "antirequisites": [] },
+    "CPSC 231": { "description": "Introduction to Computer Science for Computer Science Majors I", "prerequisites": [], "antirequisites": ["CPSC 217"] },
+    "CPSC 233": { "description": "Introduction to Computer Science for Computer Science Majors II", "prerequisites": ["CPSC 231"], "antirequisites": [] },
+    "CPSC 251": { "description": "Programming Paradigms", "prerequisites": ["CPSC 233"], "antirequisites": [] },
+    "MATH 211": { "description": "Linear Methods I", "prerequisites": ["High school calculus"], "antirequisites": [] },
+    "MATH 249/265": { "description": "Introduction to Calculus", "prerequisites": ["MATH 211"], "antirequisites": [] },
+    "PHIL 279": { "description": "Logic I", "prerequisites": [], "antirequisites": [] },
+    "CPSC 331": { "description": "Data Structures, Algorithms, and Their Analysis", "prerequisites": ["CPSC 251"], "antirequisites": [] },
+    "CPSC 351": { "description": "Operating Systems Concepts", "prerequisites": ["CPSC 331"], "antirequisites": [] },
+    "CPSC 355": { "description": "Computing Machinery I", "prerequisites": ["CPSC 331"], "antirequisites": [] },
+    "SENG 300": { "description": "Software Engineering Process", "prerequisites": ["CPSC 251"], "antirequisites": [] },
+    "PHIL 314": { "description": "Ethics and Computing", "prerequisites": [], "antirequisites": [] },
+    "CPSC 413": { "description": "Design and Analysis of Algorithms I", "prerequisites": ["CPSC 355", "CPSC 351"], "antirequisites": [] },
+    "CPSC 449": { "description": "Programming Paradigms", "prerequisites": ["CPSC 355"], "antirequisites": [] },
+    "ALMC 317": { "description": "Muslim Civilization I", "prerequisites": [], "antirequisites": [] },
+    "ERTH 305": { "description": "Introduction to Dinosaurs", "prerequisites": [], "antirequisites": [] },
     "CPSC 457": {
+      "description": "Principles of Operating Systems",
       "prerequisites": ["CPSC 355 (C+ or higher)", "CPSC 449"],
       "antirequisites": []
     },
     "CPSC 481": {
+      "description": "Human-Computer Interaction I",
       "prerequisites": ["CPSC 351 or CPSC 355"],
       "antirequisites": []
     },
-    "CPSC 383": { "prerequisites": ["CPSC 251", "MATH 249"], "antirequisites": [] },
-    "ASPH 305": { "prerequisites": [], "antirequisites": [] },
-    "AFST 303": { "prerequisites": [], "antirequisites": [] },
+    "CPSC 383": { "description": "Explorations in Artificial Intelligence and Machine Learning", "prerequisites": ["CPSC 251", "MATH 249"], "antirequisites": [] },
+    "ASPH 305": { "description": "Introduction to Astrophysics", "prerequisites": [], "antirequisites": [] },
+    "AFST 303": { "description": "Critical Contemporary Issues in Africa", "prerequisites": [], "antirequisites": [] },
     "CPSC 441": {
+      "description": "Computer Networks",
       "prerequisites": ["CPSC 355 (C+ required)", "CPSC 413 recommended"],
       "antirequisites": []
     },
-    "CPSC 409": { "prerequisites": ["CPSC 331"], "antirequisites": [] },
+    "CPSC 409": { "description": "History of Computation", "prerequisites": ["CPSC 331"], "antirequisites": [] },
     "CPSC 589": {
+      "description": "Modelling for Computer Graphics",
       "prerequisites": ["CPSC 453 with C+ or higher", "CPSC 413"],
       "antirequisites": []
     },
-    "ERTH 309": { "prerequisites": ["ERTH 305"], "antirequisites": [] },
-    "SOCI 345": { "prerequisites": [], "antirequisites": [] },
+    "ERTH 309": { "description": "Field Studies of Earth", "prerequisites": ["ERTH 305"], "antirequisites": [] },
+    "SOCI 345": { "description": "Media and Society", "prerequisites": [], "antirequisites": [] },
     "CPSC 526": {
+      "description": "Network Systems Security",
       "prerequisites": ["CPSC 441 (C+ required)", "CPSC 413"],
       "antirequisites": ["CPSC 531"]
     },
-    "CPSC Elective": { "prerequisites": ["CPSC 251"], "antirequisites": [] },
-    "CPSC 501": { "prerequisites": ["CPSC 449", "CPSC 413"], "antirequisites": [] },
-    "CPSC 405": { "prerequisites": ["CPSC 251"], "antirequisites": [] },
-    "CPSC 433": { "prerequisites": ["CPSC 413"], "antirequisites": [] },
-    "ART 241": { "prerequisites": [], "antirequisites": [] },
-    "ITAL 201": { "prerequisites": [], "antirequisites": [] },
-    "Field course": { "prerequisites": ["CPSC 331"], "antirequisites": [] }
+    "CPSC Elective": { "description": "Computer Science Elective", "prerequisites": ["CPSC 251"], "antirequisites": [] },
+    "CPSC 501": { "description": "Advanced Programming Techniques", "prerequisites": ["CPSC 449", "CPSC 413"], "antirequisites": [] },
+    "CPSC 405": { "description": "Introduction to Computer Graphics", "prerequisites": ["CPSC 251"], "antirequisites": [] },
+    "CPSC 433": { "description": "Artificial Intelligence", "prerequisites": ["CPSC 413"], "antirequisites": [] },
+    "ART 241": { "description": "Introduction to Drawing", "prerequisites": [], "antirequisites": [] },
+    "ITAL 201": { "description": "Beginners' Italian I", "prerequisites": [], "antirequisites": [] },
+    "Field course": { "description": "Field of Computer Science Course", "prerequisites": ["CPSC 331"], "antirequisites": [] }
   },
   "degreeTimeline": [
     {
