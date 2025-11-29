@@ -279,8 +279,83 @@ const attachEvents = () => {
       const term = input.dataset.term
       if (!term) return
       state.termInputs[term] = event.target.value
+      showCourseAutocomplete(term, input)
+    })
+    // Remove popup on blur
+    input.addEventListener('blur', () => {
+      setTimeout(removeCourseAutocomplete, 100)
     })
   })
+// Autocomplete popup for course selection
+function showCourseAutocomplete(term, inputElem) {
+  removeCourseAutocomplete()
+  const value = inputElem.value.trim().toLowerCase()
+  if (!value) return
+  // Build list from courseCatalog
+  const matches = Object.entries(state.courseCatalog)
+    .filter(([code]) => code.toLowerCase().includes(value))
+    .map(([code, info]) => {
+      // Find description from degreeTimeline
+      let description = '';
+      if (state.degreeTimeline) {
+        for (const year of state.degreeTimeline) {
+          for (const term of year.terms) {
+            for (const course of term.courses) {
+              if (course.code === code) {
+                description = course.description;
+                break;
+              }
+            }
+            if (description) break;
+          }
+          if (description) break;
+        }
+      }
+      return description ? `${code} - ${description}` : `${code}`;
+    })
+
+  if (!matches.length) return
+
+  // Create dropdown
+  const dropdown = document.createElement('div')
+  dropdown.className = 'autocomplete-dropdown'
+  dropdown.style.position = 'absolute'
+  dropdown.style.background = '#fff'
+  dropdown.style.border = '1px solid #ccc'
+  dropdown.style.zIndex = 1000
+  dropdown.style.width = inputElem.offsetWidth + 'px'
+  dropdown.style.maxHeight = '200px'
+  dropdown.style.overflowY = 'auto'
+
+  matches.forEach((label) => {
+    const option = document.createElement('div')
+    option.className = 'autocomplete-option'
+    option.textContent = label
+    option.style.padding = '6px 12px'
+    option.style.cursor = 'pointer'
+    option.addEventListener('mousedown', (e) => {
+      e.preventDefault()
+      state.termInputs[term] = label
+      inputElem.value = label
+      removeCourseAutocomplete()
+      // Add to semester immediately
+      handleAddCourse(term)
+    })
+    dropdown.appendChild(option)
+  })
+
+  // Position dropdown below input
+  const rect = inputElem.getBoundingClientRect()
+  dropdown.style.left = rect.left + window.scrollX + 'px'
+  dropdown.style.top = rect.bottom + window.scrollY + 'px'
+
+  document.body.appendChild(dropdown)
+}
+
+function removeCourseAutocomplete() {
+  const existing = document.querySelector('.autocomplete-dropdown')
+  if (existing) existing.remove()
+}
 
   document.querySelectorAll('.term-add-button').forEach((button) => {
     button.addEventListener('click', () => {
@@ -633,6 +708,7 @@ const init = async () => {
     state.courseCatalog = data.courseCatalog || {}
     state.plans = data.plannerTemplates || []
     state.activePlanId = state.plans[0]?.id
+    state.degreeTimeline = data.degreeTimeline || [];
     render()
   } catch (error) {
     if (root) {
