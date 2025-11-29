@@ -1192,7 +1192,7 @@ body, html {
 }
 
 .app-shell.degree-shell {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 24px 32px 40px;
 }
@@ -1205,11 +1205,12 @@ body, html {
 }
 
 .degree-shell--with-panel .degree-panel {
-  flex: 2 1 0;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
 .degree-shell--with-panel .plan-panel {
-  flex: 1 0 340px;
+  flex: 0 0 360px;
   margin-top: 0;
   position: sticky;
   top: 2rem;
