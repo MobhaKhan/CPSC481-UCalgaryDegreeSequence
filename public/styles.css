@@ -1187,7 +1187,12 @@ body, html {
 
 .degree-shell--with-panel .plan-panel {
   flex: 1 0 340px;
-  margin-top: 0;           
+  margin-top: 0;
+  position: sticky;
+  top: 2rem;
+  align-self: flex-start;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
 }
 @media (max-width: 900px) {
   .degree-shell--with-panel {
@@ -1290,17 +1295,17 @@ body, html {
 }
 
 .plan-panel__course-chip {
-  background: #fff7c2;             
+  background: #ffffff;             
   border-radius: 999px;             
   padding: 6px 12px;
   font-size: 0.85rem;
   font-weight: 500;
-  border: 1px solid #f0d97c;
+  border: 1px solid #dfe5f4;
 }
 .plan-panel__course-chip {
-  background: #fff5dc;      
-  border: 1px solid #f1d9a5;
-  color: #b88a2c;         
+  background: #ffffff;      
+  border: 1px solid #dfe5f4;
+  color: #1f2b43;         
 }
 
 html,
